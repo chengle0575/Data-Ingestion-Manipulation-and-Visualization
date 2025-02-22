@@ -14,7 +14,7 @@ public class DataCleaner {
      * @param schema the data type of the top level data
      * @example: [{a:null,b:"content"},{a:"content",b:{c:null,d:"content"}}] => [{a:"content",b:{c:null,d:"content"}}]
      * */
-    List<Map<String, Object>> clean(List<Map<String, Object>> rawData, Map<String,Class> schema, GenerateValueForMissingDataStrategy replaceDataStrategy) {
+    public static List<Map<String, Object>> clean(List<Map<String, Object>> rawData, Map<String,Class> schema, GenerateValueForMissingDataStrategy replaceDataStrategy) {
 
         List<Map<String, Object>> cleanedData = new ArrayList<>();
 
