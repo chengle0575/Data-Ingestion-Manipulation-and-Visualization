@@ -1,4 +1,4 @@
-package org.example.data_ingestion;
+package org.example.data_ingestor;
 
 
 
