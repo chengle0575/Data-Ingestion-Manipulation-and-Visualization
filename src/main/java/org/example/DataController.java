@@ -2,8 +2,7 @@ package org.example;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.example.data_processor.DataProcessor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,7 +57,7 @@ public class DataController {
         try{
             List<Map<String,Object>> res;
             if(Objects.equals(file_type, "json")){
-                res=DataProcessor.getCleanedData(filepaths[0],schemas.get(0));
+                res= DataProcessor.getCleanedData(filepaths[0],schemas.get(0));
             }else if(Objects.equals(file_type, "csv")){
                 res=DataProcessor.getCleanedData(filepaths[1],schemas.get(1));
             }else if(Objects.equals(file_type, "pdf")){
