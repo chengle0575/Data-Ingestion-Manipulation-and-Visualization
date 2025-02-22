@@ -1,4 +1,4 @@
-package org.example;
+package org.example.data_ingestion;
 
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -31,10 +31,11 @@ public class PDFDataIngestor implements DataIngestor {
             //Split text into lines, assuming rows are separated by newlines
             String[] lines = text.split("\n");
 
+
             String[] headers = new String[]{"Year","Quarter","Revenue($)","Memberships_Sold"};  //TODO: make the stcuture as dynamic input
 
             //Iterate through remaining lines to extract data for each row
-            //Drop the title of the file and headers, start from index-2
+            //Drop the title of the file and headers, start from index-
             for (int i = 2; i < lines.length; i++) {
                 String line = lines[i].trim();
 
@@ -48,6 +49,7 @@ public class PDFDataIngestor implements DataIngestor {
                         row.put(headers[j], columns[j]);
                     }
 
+                    // Add the row data to the result list
                     formattedData.add(row);
                 }
             }

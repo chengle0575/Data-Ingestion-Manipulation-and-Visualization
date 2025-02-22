@@ -1,9 +1,8 @@
-package org.example;
+package org.example.data_ingestion;
 
 import org.apache.poi.xslf.usermodel.*;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,4 +51,5 @@ public class PPTXDataIngestor implements DataIngestor {
             throw new RuntimeException(e);
         }
     }
+
 }

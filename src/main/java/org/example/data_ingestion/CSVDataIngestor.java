@@ -1,4 +1,5 @@
-package org.example;
+package org.example.data_ingestion;
+
 
 
 import com.opencsv.CSVReader;
