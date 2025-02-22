@@ -2,6 +2,7 @@ package org.example.data_cleaner.replace_missing_data_strategy;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class GenerateAverageValueStrategy implements GenerateValueForMissingDataStrategy {
 
@@ -17,16 +18,28 @@ public class GenerateAverageValueStrategy implements GenerateValueForMissingData
      * */
     @Override
     public Object generateValue(List<Map<String, Object>> rawData, String key) {
+        // Edge case
+        if(rawData.size()==0)
+            return 0.0;
+
+
+        // Normal case
         double sum=0;
         int size= rawData.size();
+        int emptyCounts=0;
         for(Map<String,Object> data:rawData){
             Object value=data.getOrDefault(key,0);
 
             try{
-                if (value instanceof String stringValue) {
-                    if(value=="") continue; //ignore the empty value when counting the sum
+                if( Objects.equals(null,value)){
+                    emptyCounts++;
+                }else if (value instanceof String stringValue) {
+                    if(value=="") {
+                        emptyCounts++;
+                        continue; //ignore the empty value when counting the sum
+                    }
                     sum +=  Double.valueOf(stringValue);
-                } else {
+                } else if(value instanceof Number){
                     // If value is already a number, directly add it
                     sum += ((Number) value).doubleValue();
                 }
@@ -35,7 +48,7 @@ public class GenerateAverageValueStrategy implements GenerateValueForMissingData
             }
 
         }
-        return sum/size;
+        return sum/(size-emptyCounts);
     }
 }
 
