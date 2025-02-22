@@ -1,0 +1,43 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "employees": [
+        {
+          "id": "E001",
+          "name": "Alice",
+          "role": "Yoga Instructor",
+          "cashmoneh": 48000,
+          "hired_date": "2021-03-10"
+        },
+        {
+          "id": "E002",
+          "name": "Bob",
+          "role": "Gym Manager",
+          "cashmoneh": 42000,
+          "hired_date": "2019-09-18"
+        }
+      ]
+
+    },
+    {
+      "id": 2,
+
+      "employees": [
+        {
+          "id": "E101",
+          "name": "Carol",
+          "role": "Wellness Coach",
+          "cashmoneh": 38000
+        },
+        {
+          "id": "E102",
+          "name": "Dave",
+          "role": "Pilates Instructor",
+          "cashmoneh": 55000
+        }
+      ]
+
+    }
+  ]
+}

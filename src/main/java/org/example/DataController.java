@@ -17,7 +17,7 @@ import java.util.*;
 @RequestMapping("/api") //Base url
 public class DataController {
 
-    private String[] filepaths=new String[]{"/home/le/Documents/Job/TestProject/datasets/dataset1.json","/home/le/Documents/Job/TestProject/datasets/dataset2.csv","/home/le/Documents/Job/TestProject/datasets/dataset3.pdf","/home/le/Documents/Job/TestProject/datasets/dataset4.pptx"};
+    private String[] filepaths=new String[]{"src/main/datasets/dataset1.json","src/main/datasets/dataset2.csv","src/main/datasets/dataset3.pdf","src/main/datasets/dataset4.pptx"};
     private List<Map<String, Class>> schemas=List.of(Map.of(
             "id", String.class,
             "name", String.class,
