@@ -1,4 +1,4 @@
-package org.example;
+package org.example.data_processor;
 
 import org.apache.commons.io.FilenameUtils;
 import org.example.data_cleaner.DataCleaner;
