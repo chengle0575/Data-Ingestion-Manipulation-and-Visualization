@@ -22,10 +22,9 @@ public class DataCleaner {
         List<Map<String, Object>> cleanedData = new ArrayList<>();
 
         for (Map<String, Object> data : rawData) {
-            if (!data.containsValue("")) {
+            if (!data.containsValue("")&&!(data.containsValue(null))) {
                 cleanedData.add(data);
             } else {
-
                 //Deal with the null value, if number is lost, insert a value based on algorithm, else drop it
                 for (String key : data.keySet()) {
                     if (Objects.equals(schema.get(key),Number.class) && data.get(key)=="") {
