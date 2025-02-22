@@ -1,11 +1,11 @@
-package org.example;
+package org.example.data_ingestion;
+
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
