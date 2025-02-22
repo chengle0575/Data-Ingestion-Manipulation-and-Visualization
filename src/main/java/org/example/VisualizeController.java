@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.Map;
-
+/**
+ * The visualizeController is used to send by dynamic page
+ * */
 @Controller
-public class VisualizeApplicationController {
-
+public class VisualizeController {
     @GetMapping("/")
     public String showVisualizationPage(Model model) {
-
-        return "visualization"; // Looks for visualization.html in src/main/resources/templates/
+        return "visualization";
     }
+
 }
